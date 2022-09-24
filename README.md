@@ -56,3 +56,12 @@ FULL OUTER JOIN fresh_segments.interest_metrics metrics
 ![image](https://user-images.githubusercontent.com/81180156/192119709-19f6dd9b-19e6-4d9c-9fb7-8751e632631c.png)
 
 
+```sql
+SELECT 
+	COUNT(DISTINCT IM.id) AS total_record
+FROM fresh_segments.interest_map IM
+```
+
+| total_records  |
+|----------------|
+|   1209         |
