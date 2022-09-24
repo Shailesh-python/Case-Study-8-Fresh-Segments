@@ -57,7 +57,9 @@ FULL OUTER JOIN fresh_segments.interest_metrics metrics
 ```
 ![image](https://user-images.githubusercontent.com/81180156/192119709-19f6dd9b-19e6-4d9c-9fb7-8751e632631c.png)
 
-
+## [Question #4](#case-study-questions)
+> Summarise the id values in the fresh_segments.interest_map by its total record count in this table.
+ 
 ```sql
 SELECT 
 	COUNT(DISTINCT IM.id) AS total_record
@@ -67,3 +69,9 @@ FROM fresh_segments.interest_map IM
 | total_records  |
 |----------------|
 |   1209         |
+
+## [Question #5](#case-study-questions)
+> What sort of table join should we perform for our analysis and why? Check your logic by checking the rows where interest_id = 21246 in your joined output and include all columns from fresh_segments.interest_metrics and all columns from fresh_segments.interest_map except from the id column.
+
+```sql
+```
