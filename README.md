@@ -14,7 +14,8 @@ There are 2 data tables available to us in `fresh_segments` schema which we can 
 ### A.Data Exploration and Cleansing
 
 ## [Question #1](#case-study-questions)
-> Update the fresh_segments.interest_metrics table by modifying the month_year column to be a date data type with the start of the month.
+> What is count of records in the fresh_segments.interest_metrics for each month_year value sorted in chronological order (earliest to latest) with the null values appearing first?
+
 ```sql
 ```
 
