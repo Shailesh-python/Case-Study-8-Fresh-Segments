@@ -39,7 +39,9 @@ SELECT
     COUNT(*)),2) AS null_perc
 FROM fresh_segments.interest_metrics
 ```
-8.36
+| null_perc      |
+|----------------|
+|   8.36         |
 
 ## [Question #3](#case-study-questions)
 > How many interest_id values exist in the fresh_segments.interest_metrics table but not in the fresh_segments.interest_map table? What about the other way around?
