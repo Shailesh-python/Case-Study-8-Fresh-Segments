@@ -28,7 +28,31 @@ ORDER BY month_year;
 
 ## [Question #2](#case-study-questions)
 > What do you think we should do with these null values in the fresh_segments.interest_metrics?
-The null values appear in _month, _year, month_year, and interest_id. The corresponding values in composition, index_value, ranking, and percentile_ranking fields are not meaningful without the specific information on interest_id and dates.
 
-Before dropping the values, it would be useful to find out the percentage of null values.
+The null values appear in `_month`, `_year`, `month_year`, and `interest_id`. The corresponding values in `composition`, `index_value`, `ranking`, and `percentile_ranking` fields are not meaningful without the specific information on interest_id and dates.
+
+Before dropping the values, it would be useful to find out the percentage of `null` values.
+
+```SQL
+SELECT 
+  ROUND(100 * (SUM(CASE WHEN interest_id IS NULL THEN 1 END) * 1.0 /
+    COUNT(*)),2) AS null_perc
+FROM fresh_segments.interest_metrics
+```
+8.36
+
+## [Question #3](#case-study-questions)
+> How many interest_id values exist in the fresh_segments.interest_metrics table but not in the fresh_segments.interest_map table? What about the other way around?
+```SQL
+SELECT 
+  COUNT(DISTINCT map.id) AS map_id_count,
+  COUNT(DISTINCT metrics.interest_id) AS metrics_id_count,
+  SUM(CASE WHEN map.id is NULL THEN 1 END) AS not_in_metric,
+  SUM(CASE WHEN metrics.interest_id is NULL THEN 1 END) AS not_in_map
+FROM fresh_segments.interest_map map
+FULL OUTER JOIN fresh_segments.interest_metrics metrics
+  ON metrics.interest_id = map.id;
+```
+![image](https://user-images.githubusercontent.com/81180156/192119709-19f6dd9b-19e6-4d9c-9fb7-8751e632631c.png)
+
 
