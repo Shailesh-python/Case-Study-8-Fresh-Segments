@@ -85,5 +85,35 @@ WHERE ME.interest_id = 21246
 ![image](https://user-images.githubusercontent.com/81180156/192159343-0280c215-da51-49a6-86d3-aa4ebd13d739.png)
 
 
+### B.Interest Analysis
 
-GGG
+## [Question #1](#case-study-questions)
+> Which interests have been present in all month_year dates in our dataset?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
