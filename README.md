@@ -74,4 +74,12 @@ FROM fresh_segments.interest_map IM
 > What sort of table join should we perform for our analysis and why? Check your logic by checking the rows where interest_id = 21246 in your joined output and include all columns from fresh_segments.interest_metrics and all columns from fresh_segments.interest_map except from the id column.
 
 ```sql
+SELECT 
+	* 
+FROM fresh_segments.interest_metrics ME
+INNER JOIN fresh_segments.interest_map MP
+ON ME.interest_id = MP.id
+WHERE ME.interest_id = 21246
+	AND ME.[month] IS NOT NULL
 ```
+![image](https://user-images.githubusercontent.com/81180156/192159343-0280c215-da51-49a6-86d3-aa4ebd13d739.png)
